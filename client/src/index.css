@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error {
+  @apply text-red-600 font-mono tracking-tighter text-sm my-1;
+}

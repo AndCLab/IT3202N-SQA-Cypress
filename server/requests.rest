@@ -1,0 +1,79 @@
+### app check
+GET http://localhost:4000/api
+
+### Register
+
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+    "username": "miguel",
+    "password": "password"
+}
+
+
+### Login
+
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "username": "miguel",
+    "password": "password"
+}
+
+
+### Verify Token
+
+GET http://localhost:4000/api/verify
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikp0NzdJYmZubkl0SjVJVmdKWlhBIiwidXNlcm5hbWUiOiJtaWd1ZWwiLCJpYXQiOjE3MTQ2NTI2OTEsImV4cCI6MTcxNDY1Mjk5MX0.axd9u0SKX46ZvuAT58zvFjjOs8xXYaxxqAg7lYUptQY
+
+
+### Request New Token
+
+POST http://localhost:4000/api/refresh
+Content-Type: application/json
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsImlhdCI6MTcxMzY4NDIxMX0.wjqEiX5al50NQ8EeiNDHDAa8ih2SdjOltPK-beEPs04
+
+
+### Logout (Delete Refresh Token)
+
+DELETE http://localhost:4000/api/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsInBhc3N3b3JkIjoiJDJiJDEwJGQ1MHlRQW02TUpVTGtScGFGMEFjQ2UvZC95OFlKZmU3dDk3ejV2L1ZXajhDd1FBVFg4Zml5IiwiaWF0IjoxNzEzNTIxOTU2fQ.2KUfp_8uzvQ26cBqGMf8mgiiqEiHpRVDwI5BBmu3GY0"
+}
+
+
+
+### --- TASK ROUTES ----
+
+### get all tasks
+GET http://localhost:4000/api/task
+
+### create task
+POST http://localhost:4000/api/task
+Content-Type: application/json
+
+{
+    "title": "newest",
+    "description": "desc...",
+    "status": false
+}
+
+### edit task
+PUT http://localhost:4000/api/task/jCZoAVZAv0JoFGUsr4J5
+Content-Type: application/json
+
+{
+    "title": "newest",
+    "description": "new desc"
+}
+
+### delete task
+DELETE http://localhost:4000/api/task/jCZoAVZAv0JoFGUsr4J5
+
+
+### update task status
+PATCH http://localhost:4000/api/task/26fpQ22UuDtkg64WJc7U
